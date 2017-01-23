@@ -23,19 +23,8 @@ function View1Ctrl($scope) {
         console.log($scope);
         $scope.note = null;
     };
+
+    $scope.clear = function (){
+        $scope.notes.length = 0;
+    }
 }
-
-/*function View1Ctrl($scope){
-
-    $scope.notes = new array();
-
-
-    $scope.addNote = function (){
-        console.log("entered");
-        $scope.notes.push({
-            id: $scope.notes.length,
-            content: $scope.note
-        });
-        console.log($scope);
-    };
-}*/
