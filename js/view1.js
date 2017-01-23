@@ -2,15 +2,40 @@
  * @author
  * @since 1/23/2017
  */
-angular.module('MyApp', ['ngRoute'])
+angular.module('MyApp')
 
-.controller('View1Ctrl', function($scope){
+    .controller('View1Ctrl', ['$scope', View1Ctrl]);
+
+// Inject my dependencies
+View1Ctrl.$inject = ['$scope'];
+
+// Now create our controller function with all necessary logic
+function View1Ctrl($scope) {
+
+    $scope.notes = new Array();
+
+    $scope.addNote = function (){
+        console.log("entered");
+        $scope.notes.push({
+            id: $scope.notes.length,
+            content: $scope.note
+        });
+        console.log($scope);
+        $scope.note = null;
+    };
+}
+
+/*function View1Ctrl($scope){
 
     $scope.notes = new array();
 
 
-    $scope.addNote = function ($note){
-        $scope.notes.push($note);
-        console.log($scope.notes);
-    }
-});
+    $scope.addNote = function (){
+        console.log("entered");
+        $scope.notes.push({
+            id: $scope.notes.length,
+            content: $scope.note
+        });
+        console.log($scope);
+    };
+}*/
