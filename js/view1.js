@@ -15,7 +15,6 @@ function View1Ctrl($scope) {
     $scope.notes = new Array();
 
     $scope.addNote = function (){
-        console.log("entered");
         $scope.notes.push({
             id: $scope.notes.length,
             content: $scope.note
@@ -26,5 +25,5 @@ function View1Ctrl($scope) {
 
     $scope.clear = function (){
         $scope.notes.length = 0;
-    }
+    };
 }
